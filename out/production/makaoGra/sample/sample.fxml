@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox prefHeight="600.0" prefWidth="800.0"
+      xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="sample.Controller">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="219.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fx:id="brandingImageView" fitHeight="600.0" fitWidth="420.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/LewaStrona.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="590.0" prefWidth="584.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fx:id="lockImageView" fitHeight="228.0" fitWidth="398.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/LOGO_HCH.jpg" />
+               </image>
+            </ImageView>
+            <TextField fx:id="tf_username" layoutX="136.0" layoutY="260.0" prefHeight="40.0" prefWidth="194.0" promptText="Twój login">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></TextField>
+            <PasswordField fx:id="tf_password" layoutX="136.0" layoutY="322.0" prefHeight="40.0" prefWidth="194.0" promptText="Twoje hasło">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font></PasswordField>
+            <Label layoutX="22.0" layoutY="260.0" prefHeight="40.0" prefWidth="94.0" text="Login">
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="22.0" layoutY="322.0" prefHeight="40.0" prefWidth="94.0" text="Hasło">
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="button_login" layoutX="23.0" layoutY="434.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: #b9aeae;" text="Zaloguj się" textFill="#922222">
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="button_cancel" layoutX="206.0" layoutY="434.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="122.0" style="-fx-background-color: #b9aeae;" text="Anuluj" textFill="#922222">
+               <font>
+                  <Font name="Arial" size="17.0" />
+               </font>
+            </Button>
+            <Label layoutX="97.0" layoutY="538.0" prefHeight="22.0" prefWidth="85.0" style="-fx-background-color: #ffffff;" text="Pierwszy raz?">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font></Label>
+            <Button fx:id="button_sign_up" layoutX="182.0" layoutY="536.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #ffffff; -fx-cursor: hand;" text="Zarejestruj się!" textFill="#922222" underline="true">
+               <font>
+                  <Font name="Arial" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>
