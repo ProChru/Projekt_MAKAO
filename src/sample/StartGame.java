@@ -140,28 +140,28 @@ public class StartGame implements Initializable{
             Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta o nieprawidlowym kolorze ");
             alerttt.setHeaderText("Karta koloru Pik");
-            alerttt.setContentText("Musisz położyć ten sam kolor!");
+            alerttt.setContentText("Musisz położyć ten sam kolor lub figure!");
             alerttt.showAndWait();
         }
         else if(cards[p].getWybory()==11){
             Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta o nieprawidlowym kolorze ");
             alerttt.setHeaderText("Karta koloru Trefl");
-            alerttt.setContentText("Musisz położyć ten sam kolor!");
+            alerttt.setContentText("Musisz położyć ten sam kolor lub figure!");
             alerttt.showAndWait();
         }
         else if(cards[p].getWybory()==12){
             Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta o nieprawidlowym kolorze ");
             alerttt.setHeaderText("Karta koloru Kier");
-            alerttt.setContentText("Musisz położyć ten sam kolor!");
+            alerttt.setContentText("Musisz położyć ten sam kolor lub figure!");
             alerttt.showAndWait();
         }
         else if(cards[p].getWybory()==13){
             Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta o nieprawidlowym kolorze ");
             alerttt.setHeaderText("Karta koloru Karo");
-            alerttt.setContentText("Musisz położyć ten sam kolor!");
+            alerttt.setContentText("Musisz położyć ten sam kolor lub figure!");
             alerttt.showAndWait();
         }
     }
@@ -636,28 +636,28 @@ public class StartGame implements Initializable{
             Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta o nieprawidlowym kolorze ");
             alerttt.setHeaderText("Karta koloru Pik");
-            alerttt.setContentText("Musisz położyć ten sam kolor!");
+            alerttt.setContentText("Musisz położyć ten sam kolor lub figure!");
             alerttt.showAndWait();
         }
         else if(cards[11].getWybory()==11){
             Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta o nieprawidlowym kolorze ");
             alerttt.setHeaderText("Karta koloru Trefl");
-            alerttt.setContentText("Musisz położyć ten sam kolor!");
+            alerttt.setContentText("Musisz położyć ten sam kolor lub figure!");
             alerttt.showAndWait();
         }
         else if(cards[11].getWybory()==12){
             Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta o nieprawidlowym kolorze ");
             alerttt.setHeaderText("Karta koloru Kier");
-            alerttt.setContentText("Musisz położyć ten sam kolor!");
+            alerttt.setContentText("Musisz położyć ten sam kolor lub figure!");
             alerttt.showAndWait();
         }
         else if(cards[11].getWybory()==13){
             Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta o nieprawidlowym kolorze ");
             alerttt.setHeaderText("Karta koloru Karo");
-            alerttt.setContentText("Musisz położyć ten sam kolor!");
+            alerttt.setContentText("Musisz położyć ten sam kolor lub figure!");
             alerttt.showAndWait();
         }
     }
@@ -739,14 +739,14 @@ public class StartGame implements Initializable{
 
     public void buttonik8(MouseEvent mouseEvent) {
 
-        funkcyjkiKart(8);
+        funkcyjkiKart(7);
         imageButton8.setImage(null);
         alercikiKolorciki(7);
     }
 
     public void buttonik9(MouseEvent mouseEvent) {
 
-        funkcyjkiKart(9);
+        funkcyjkiKart(8);
         imageButton9.setImage(null);
         alercikiKolorciki(8);
     }
