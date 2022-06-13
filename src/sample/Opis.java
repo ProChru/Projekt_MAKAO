@@ -44,6 +44,4 @@ public class Opis implements Initializable{
     }
 
 
-    //FileReader fr = new FileReader("C:\\Users\\dawch\\OneDrive\\Pulpit\\makaoGra\\src\\sample\\projekt_zasady_JAVAZASADY.txt");
-
 }

@@ -25,10 +25,11 @@
                   <Image url="@../../images/CardBack.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="imageBierzacaKarta" fitHeight="364.0" fitWidth="259.0" layoutX="860.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/imagesCards/Karo_As.png" />
-               </image></ImageView>
+            <Button layoutX="867.0" layoutY="42.0" mnemonicParsing="false" onMouseClicked="#buttonikBierzacy" prefHeight="364.0" prefWidth="259.0">
+               <graphic>
+                  <ImageView fx:id="imageBierzacaKarta" fitHeight="364.0" fitWidth="259.0" onMouseClicked="#buttonikBierzacy" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="199.0" prefWidth="1920.0" GridPane.rowIndex="1">
@@ -92,7 +93,7 @@
                </graphic></Button>
          </children>
       </AnchorPane>
-      <AnchorPane onDragDetected="#setButtonIcons" prefHeight="300.0" prefWidth="1920.0" GridPane.rowIndex="3">
+      <AnchorPane prefHeight="300.0" prefWidth="1920.0" GridPane.rowIndex="3">
          <children>
             <Button fx:id="powrotDoMenu" layoutX="1593.0" layoutY="14.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="272.0" text="Powrót do menu">
                <graphic>

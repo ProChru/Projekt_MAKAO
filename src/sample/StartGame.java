@@ -99,36 +99,18 @@ public class StartGame implements Initializable{
 
 
     private DodanieNowegoGracza addPlayers = new DodanieNowegoGracza();
-
     Game game;
-
     StartGame startGame;
-
-
 
 
     public StartGame() throws IOException {}
     public StartGame(ArrayList<String> playerIds) throws IOException {
 
         imageBierzacaKarta.setImage(new Image(String.valueOf(getClass().getResource("images/imagesCards/" + game.getTopCardImage()))));
-        setButtonIcons();
+
 
     }
 
-
-
-    public void setButtonIcons(){
-        //String listString = game.getPlayerHand(game.getCurrentPlayer()).stream().map(Object::toString).collect(Collectors.joining(","));
-       // String[] cardNames = listString.split(",");
-        //cardIds = new ArrayList<String>(Arrays.asList(cardNames));
-        game.getTopCardImage();
-      //  for(int i = 0; i < 54; i++){
-      //      cardButtons.get(i).setImage(new Image(String.valueOf((getClass().getResource("images/imagesCards/" + cardIds[i] + ".png")))));
-      //  }
-       // for(int i = cardIds.length; i < cardButtons.size(); i++){
-       //     cardButtons.get(i).setImage(null); //ustawia wszystkie ikony kart na puste
-       // }
-    }
 
    public void setPidName(){
         String currentPlayer = game.getCurrentPlayer();
@@ -230,14 +212,13 @@ public class StartGame implements Initializable{
         }
     }
 
-
-    karty[] cards = new karty[11];
+    karty[] cards = new karty[12];
 
     int przydzialA(int a){
         int liczba = 100;
-        if(a>0&&a<=4)//As
+        if(a>=0&&a<=3)//As
             liczba=0;
-        else if(a>4&&a<=7)//King
+        else if(a>3&&a<=7)//King
             liczba=1;
         else if(a>7&&a<=10)//Four
             liczba=2;
@@ -245,6 +226,31 @@ public class StartGame implements Initializable{
             liczba=3;
         else if(a>15&&a<=17)//Joker
             liczba=4;
+        return liczba;
+    }
+
+    int przydzialKolor(int b){
+        int liczba = 100;
+        if(b==0||b==4||b==8||b==12)
+            liczba=10;//Pik
+        else if(b>=23 && b>=27)
+            liczba=10;//Pik
+        else if(b>36&&b<=41)
+            liczba=10;//Pik
+        else if(b==1||b==5||b==9||b==13)
+            liczba=11;//Trefl
+        else if(b>17&&b>=23)
+            liczba=11;//Trefl
+        else if(b>50&&b<=53)
+           liczba=11;//Trefl
+        else if(b==2||b==6||b==10||b==14)
+            liczba=12;//Kier
+        else if(b>27&&b>=36)
+            liczba=12;//Kier
+        else if(b==3||b==7||b==11||b==15)
+            liczba=13;//Karo
+        else if(b>41&&b>=50)
+            liczba=13;//Karo
         return liczba;
     }
 
@@ -276,8 +282,8 @@ public class StartGame implements Initializable{
         cardIds[20] = "Trefl_Seven";
         cardIds[21] = "Trefl_Six";
         cardIds[22] = "Trefl_Five";
-        cardIds[23] = "Pik_Queen";
-        cardIds[24] = "Trefl_Three";
+        cardIds[23] = "Trefl_Three";
+        cardIds[24] = "Pik_Queen";
         cardIds[25] = "Pik_Jack";
         cardIds[26] = "Pik_Ten";
         cardIds[27] = "Pik_Nine";
@@ -289,12 +295,12 @@ public class StartGame implements Initializable{
         cardIds[33] = "Kier_Seven";
         cardIds[34] = "Kier_Six";
         cardIds[35] = "Kier_Five";
-        cardIds[36] = "Pik_Eight";
-        cardIds[37] = "Kier_Three";
+        cardIds[36] = "Kier_Three";
+        cardIds[37] = "Pik_Eight";
         cardIds[38] = "Pik_Seven";
         cardIds[39] = "Pik_Six";
         cardIds[40] = "Pik_Five";
-        cardIds[41] = "Karo_Queen";
+        cardIds[41] = "Pik_Three";
         cardIds[42] = "Karo_Jack";
         cardIds[43] = "Karo_Ten";
         cardIds[44] = "Karo_Nine";
@@ -302,12 +308,11 @@ public class StartGame implements Initializable{
         cardIds[46] = "Karo_Seven";
         cardIds[47] = "Karo_Six";
         cardIds[48] = "Karo_Five";
-        cardIds[49] = "Pik_Three";
-        cardIds[50] = "Karo_Three";
+        cardIds[49] = "Karo_Three";
+        cardIds[50] = "Karo_Queen";
         cardIds[51] = "Trefl_Queen";
         cardIds[52] = "Trefl_Jack";
         cardIds[53] = "Trefl_Ten";
-
 
         Random randomek = new Random();
 
@@ -322,6 +327,7 @@ public class StartGame implements Initializable{
         int i = randomek.nextInt(54);
         int j = randomek.nextInt(54);
         int k = randomek.nextInt(54);
+        int l = randomek.nextInt(54);
 
 
         File Pliczki1 = new File("images/imagesCards/"+cardIds[a]+".png");
@@ -343,6 +349,7 @@ public class StartGame implements Initializable{
         File Pliczki9 = new File("images/imagesCards/"+cardIds[i]+".png");
         File Pliczki10 = new File("images/imagesCards/"+cardIds[j]+".png");
         File Pliczki11 = new File("images/imagesCards/"+cardIds[k]+".png");
+        File Pliczki12 = new File("images/imagesCards/"+cardIds[l]+".png");
 
         Image imagus6 = new Image(Pliczki6.toURI().toString());
         Image imagus7 = new Image(Pliczki7.toURI().toString());
@@ -350,6 +357,7 @@ public class StartGame implements Initializable{
         Image imagus9 = new Image(Pliczki9.toURI().toString());
         Image imagus10 = new Image(Pliczki10.toURI().toString());
         Image imagus11 = new Image(Pliczki11.toURI().toString());
+        Image imagus12 = new Image(Pliczki12.toURI().toString());
 
         cards[0]= new karty();
         cards[1]= new karty();
@@ -362,6 +370,7 @@ public class StartGame implements Initializable{
         cards[8]= new karty();
         cards[9]= new karty();
         cards[10]= new karty();
+        cards[11]= new karty();
 
         cards[0].setNazwa(cardIds[a]);
         cards[0].setWybor(przydzialA(a));
@@ -386,6 +395,21 @@ public class StartGame implements Initializable{
         cards[10].setNazwa(cardIds[k]);
         cards[10].setWybor(przydzialA(k));
 
+        cards[0].setWybor(przydzialKolor(a));
+        cards[1].setWybor(przydzialKolor(b));
+        cards[2].setWybor(przydzialKolor(c));
+        cards[3].setWybor(przydzialKolor(d));
+        cards[4].setWybor(przydzialKolor(e));
+        cards[5].setWybor(przydzialKolor(f));
+        cards[6].setWybor(przydzialKolor(g));
+        cards[7].setWybor(przydzialKolor(h));
+        cards[8].setWybor(przydzialKolor(i));
+        cards[9].setWybor(przydzialKolor(j));
+        cards[10].setWybor(przydzialKolor(k));
+
+        cards[11].setNazwa(cardIds[l]);
+        cards[11].setWybor(przydzialKolor(l));
+
 
         //kod do obrazka na powrot do menu
         File lockFile = new File("images/LOGO_HCH_wieksze.jpg");
@@ -404,6 +428,12 @@ public class StartGame implements Initializable{
             }
         });
 
+        imageButton1.setImage(imagus1);
+        imageButton2.setImage(imagus2);
+        imageButton3.setImage(imagus3);
+        imageButton4.setImage(imagus4);
+        imageButton5.setImage(imagus5);
+        imageBierzacaKarta.setImage(imagus12);
 
      Button1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -419,15 +449,36 @@ public class StartGame implements Initializable{
             public void handle(ActionEvent event) {
 
                 imageBierzacaKarta.setImage(imagus2);
+                if(cards[1].getWybor()==11){
+                    Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
+                    alerttt.setTitle("Karta o nieprawidlowym kolorze ");
+                    alerttt.setHeaderText("Karta koloru "+cards[1].nazwa);
+                    alerttt.showAndWait();
+                }
+                else if(cards[1].getWybor()==12){
+                    Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
+                    alerttt.setTitle("Karta o nieprawidlowym kolorze ");
+                    alerttt.setHeaderText("Karta koloru "+cards[1].nazwa);
+                    alerttt.setContentText("Musisz położyć inna karte!");
+                    alerttt.showAndWait();
+                }
+                else if(cards[1].getWybor()==13){
+                    Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
+                    alerttt.setTitle("Karta o nieprawidlowym kolorze ");
+                    alerttt.setHeaderText("Karta koloru "+cards[1].nazwa);
+                    alerttt.setContentText("Musisz położyć inna karte!");
+                    alerttt.showAndWait();
+                }
+                else if(cards[1].getWybor()==14){
+                    Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
+                    alerttt.setTitle("Karta o nieprawidlowym kolorze ");
+                    alerttt.setHeaderText("Karta koloru "+cards[1].nazwa);
+                    alerttt.setContentText("Musisz położyć inna karte!");
+                    alerttt.showAndWait();
+                }
 
             }
         });
-
-        imageButton1.setImage(imagus1);
-        imageButton2.setImage(imagus2);
-        imageButton3.setImage(imagus3);
-        imageButton4.setImage(imagus4);
-        imageButton5.setImage(imagus5);
 
         Button3.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -556,6 +607,41 @@ public class StartGame implements Initializable{
         });
 
     }
+    public void buttonikBierzacy(MouseEvent mouseEvent) {
+
+        if(cards[11].getWybor()==10){
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
+            alerttt.setTitle("Karta o nieprawidlowym kolorze ");
+            alerttt.setHeaderText("Karta koloru Pik");
+            alerttt.setContentText("Musisz położyć ten sam kolor!");
+            alerttt.showAndWait();
+        }
+        else if(cards[11].getWybor()==11){
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
+            alerttt.setTitle("Karta o nieprawidlowym kolorze ");
+            alerttt.setHeaderText("Karta koloru Trefl");
+            alerttt.setContentText("Musisz położyć ten sam kolor!");
+            alerttt.showAndWait();
+        }
+        else if(cards[11].getWybor()==12){
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
+            alerttt.setTitle("Karta o nieprawidlowym kolorze ");
+            alerttt.setHeaderText("Karta koloru Kier");
+            alerttt.setContentText("Musisz położyć ten sam kolor!");
+            alerttt.showAndWait();
+        }
+        else if(cards[11].getWybor()==13){
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
+            alerttt.setTitle("Karta o nieprawidlowym kolorze ");
+            alerttt.setHeaderText("Karta koloru Karo");
+            alerttt.setContentText("Musisz położyć ten sam kolor!");
+            alerttt.showAndWait();
+        }
+    }
+
+
+
+
     public void buttonik1(MouseEvent mouseEvent) {
 
         if(cards[0].getWybor()==0){
@@ -574,11 +660,12 @@ public class StartGame implements Initializable{
             funkcjaJoker(cards[0].nazwa);
         }
         else{
-            Alert alerttt = new Alert (Alert.AlertType.CONFIRMATION);
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("karta niefunkcyjna ");
             alerttt.setHeaderText("Karta niefunkcyjna "+cards[0].nazwa);
             alerttt.showAndWait();
         }
+        imageButton1.setImage(null);
 
     }
     public void buttonik2(MouseEvent mouseEvent) {
@@ -599,11 +686,12 @@ public class StartGame implements Initializable{
             funkcjaJoker(cards[1].nazwa);
         }
         else{
-            Alert alerttt = new Alert (Alert.AlertType.CONFIRMATION);
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta niefunkcyjna");
             alerttt.setHeaderText("Karta niefunkcyjna "+cards[1].nazwa);
             alerttt.showAndWait();
         }
+        imageButton2.setImage(null);
     }
 
     public void buttonik3(MouseEvent mouseEvent) {
@@ -624,11 +712,12 @@ public class StartGame implements Initializable{
             funkcjaJoker(cards[2].nazwa);
         }
         else{
-            Alert alerttt = new Alert (Alert.AlertType.CONFIRMATION);
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta niefunkcyjna");
             alerttt.setHeaderText("Karta niefunkcyjna "+cards[2].nazwa);
             alerttt.showAndWait();
         }
+        imageButton3.setImage(null);
     }
 
     public void buttonik4(MouseEvent mouseEvent) {
@@ -649,11 +738,12 @@ public class StartGame implements Initializable{
             funkcjaJoker(cards[3].nazwa);
         }
         else{
-            Alert alerttt = new Alert (Alert.AlertType.CONFIRMATION);
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta niefunkcyjna");
             alerttt.setHeaderText("Karta niefunkcyjna "+cards[3].nazwa);
             alerttt.showAndWait();
         }
+        imageButton4.setImage(null);
     }
 
     public void buttonik5(MouseEvent mouseEvent) {
@@ -674,11 +764,12 @@ public class StartGame implements Initializable{
             funkcjaJoker(cards[4].nazwa);
         }
         else{
-            Alert alerttt = new Alert (Alert.AlertType.CONFIRMATION);
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta niefunkcyjna");
             alerttt.setHeaderText("Karta niefunkcyjna "+cards[4].nazwa);
             alerttt.showAndWait();
         }
+        imageButton5.setImage(null);
     }
     public void buttonik6(MouseEvent mouseEvent) {
 
@@ -698,11 +789,12 @@ public class StartGame implements Initializable{
             funkcjaJoker(cards[5].nazwa);
         }
         else{
-            Alert alerttt = new Alert (Alert.AlertType.CONFIRMATION);
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta niefunkcyjna");
             alerttt.setHeaderText("Karta niefunkcyjna "+cards[5].nazwa);
             alerttt.showAndWait();
         }
+        imageButton6.setImage(null);
     }
 
     public void buttonik7(MouseEvent mouseEvent) {
@@ -723,11 +815,12 @@ public class StartGame implements Initializable{
             funkcjaJoker(cards[6].nazwa);
         }
         else{
-            Alert alerttt = new Alert (Alert.AlertType.CONFIRMATION);
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta niefunkcyjna");
             alerttt.setHeaderText("Karta niefunkcyjna "+cards[6].nazwa);
             alerttt.showAndWait();
         }
+        imageButton7.setImage(null);
     }
 
 
@@ -750,11 +843,12 @@ public class StartGame implements Initializable{
             funkcjaJoker(cards[7].nazwa);
         }
         else{
-            Alert alerttt = new Alert (Alert.AlertType.CONFIRMATION);
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta niefunkcyjna");
             alerttt.setHeaderText("Karta niefunkcyjna "+cards[7].nazwa);
             alerttt.showAndWait();
         }
+        imageButton8.setImage(null);
     }
 
     public void buttonik9(MouseEvent mouseEvent) {
@@ -775,11 +869,12 @@ public class StartGame implements Initializable{
             funkcjaJoker(cards[8].nazwa);
         }
         else{
-            Alert alerttt = new Alert (Alert.AlertType.CONFIRMATION);
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta niefunkcyjna");
             alerttt.setHeaderText("Karta niefunkcyjna "+cards[8].nazwa);
             alerttt.showAndWait();
         }
+        imageButton9.setImage(null);
     }
 
     public void buttonik10(MouseEvent mouseEvent) {
@@ -800,11 +895,12 @@ public class StartGame implements Initializable{
             funkcjaJoker(cards[9].nazwa);
         }
         else{
-            Alert alerttt = new Alert (Alert.AlertType.CONFIRMATION);
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta niefunkcyjna");
             alerttt.setHeaderText("Karta niefunkcyjna "+cards[9].nazwa);
             alerttt.showAndWait();
         }
+        imageButton10.setImage(null);
     }
 
     public void buttonik11(MouseEvent mouseEvent) {
@@ -825,11 +921,12 @@ public class StartGame implements Initializable{
             funkcjaJoker(cards[10].nazwa);
         }
         else{
-            Alert alerttt = new Alert (Alert.AlertType.CONFIRMATION);
+            Alert alerttt = new Alert (Alert.AlertType.INFORMATION);
             alerttt.setTitle("Karta niefunkcyjna");
             alerttt.setHeaderText("Karta niefunkcyjna "+cards[10].nazwa);
             alerttt.showAndWait();
         }
+        imageButton11.setImage(null);
     }
 }
 
