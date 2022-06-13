@@ -7,6 +7,15 @@ public class karty {
     String nazwa;
     Image xd;
     int wybor;
+    int wybory;
+
+    public void setWybory(int wybory) {
+        this.wybory = wybory;
+    }
+
+    public int getWybory() {
+        return wybory;
+    }
 
     public void setWybor(int wybor) {
         this.wybor = wybor;
