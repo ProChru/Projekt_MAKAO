@@ -4,8 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -161,7 +160,7 @@ public class StartGame implements Initializable{
        // }
     }
 
-    public void losowanie(ImageView imageView,ImageView imageView2){
+    public void losowanie(ImageView imageView){
 
         String[] cardIds = new String[54];
         cardIds[0] = "Pik_As";
@@ -224,11 +223,16 @@ public class StartGame implements Initializable{
         int a = randomek.nextInt(54);
 
         File Pliczki = new File("images/imagesCards/"+cardIds[a]+".png");
+
+       /* if(cardIds[a] == cardIds[0])
+        {
+            DBUtils.changeScene(event, "PickColorFrame.fxml","Wybrana karta", null);
+        }
+        */
+
         Image imagus = new Image(Pliczki.toURI().toString());
-        //imageBierzaca.setImage(imagus);
         imageView.setImage(imagus);
-        Image imagus2 = new Image(Pliczki.toURI().toString());
-        imageView2.setImage(imagus);
+
 
     }
 
@@ -253,6 +257,107 @@ public class StartGame implements Initializable{
     }
     public void setPidName(String currentPlayer){
         twojeKarty.setText(currentPlayer + "karty");
+    }
+
+    public void funkcjaAs(){
+        String[] cardIds = new String[54];
+        cardIds[0] = "Pik_As";
+        cardIds[13] = "Trefl_As";
+        cardIds[26] = "Kier_As";
+        cardIds[39] = "Karo_As";
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Wybór koloru");
+        alert.setHeaderText("Wyłożyłeś Asa musisz wybrać kolor dla przeciwnika");
+        alert.setContentText("Wybierz kolor: ");
+
+        ButtonType buttonTypeKier = new ButtonType("Kier");
+        ButtonType buttonTypePik = new ButtonType("Pik");
+        ButtonType buttonTypeKaro = new ButtonType("Karo");
+        ButtonType buttonTypeTrefl = new ButtonType("Trefl");
+        ButtonType buttonTypeCancel = new ButtonType("Anuluj", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+        alert.getButtonTypes().setAll(buttonTypeKier, buttonTypePik, buttonTypeKaro,buttonTypeTrefl, buttonTypeCancel);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == buttonTypeKier){
+            Alert alertt = new Alert (Alert.AlertType.INFORMATION);
+            alertt.setTitle("Twój wybór");
+            alertt.setHeaderText(null);
+            alertt.setContentText("Wybrano kolor Kier!");
+            alertt.showAndWait();
+        } else if (result.get() == buttonTypePik) {
+            Alert alertt = new Alert (Alert.AlertType.INFORMATION);
+            alertt.setTitle("Twój wybór");
+            alertt.setHeaderText(null);
+            alertt.setContentText("Wybrano kolor Pik!");
+            alertt.showAndWait();
+        } else if (result.get() == buttonTypeKaro) {
+            Alert alertt = new Alert (Alert.AlertType.INFORMATION);
+            alertt.setTitle("Twój wybór");
+            alertt.setHeaderText(null);
+            alertt.setContentText("Wybrano kolor Karo!");
+            alertt.showAndWait();
+        } else if (result.get() == buttonTypeTrefl) {
+            Alert alertt = new Alert (Alert.AlertType.INFORMATION);
+            alertt.setTitle("Twój wybór");
+            alertt.setHeaderText(null);
+            alertt.setContentText("Wybrano kolor Trefl!");
+            alertt.showAndWait();
+        } else {
+        }
+    }
+
+    public void funkcjaFour(){
+        Alert alertt = new Alert (Alert.AlertType.ERROR);
+        alertt.setTitle("Stop!!!");
+        alertt.setHeaderText("Twój przeciwnik zablokował Cię na jedną kolejkę");
+        alertt.setContentText("Zostałeś pominięty!");
+        alertt.showAndWait();
+    }
+
+    public void funkcjaKing(){
+        Alert alertt = new Alert (Alert.AlertType.INFORMATION);
+        alertt.setTitle("Dobranie kart!");
+        alertt.setHeaderText("Twój przeciwnik używa karty KING");
+        alertt.setContentText("Musisz pobrać 4 karty!");
+        alertt.showAndWait();
+    }
+
+    public void funkcjaTwo(){
+        Alert alertt = new Alert (Alert.AlertType.INFORMATION);
+        alertt.setTitle("Dobranie kart!");
+        alertt.setHeaderText("Twój przeciwnik używa karty TWO");
+        alertt.setContentText("Musisz pobrać 2 karty!");
+        alertt.showAndWait();
+    }
+
+    public void funkcjaJocker(){
+
+        Alert alertt = new Alert (Alert.AlertType.CONFIRMATION);
+        alertt.setTitle("Karta na wszystko!");
+        alertt.setHeaderText("Użyłeś karty Jocker");
+        alertt.setContentText("Możesz wybrać działanie kart funkcyjnych");
+
+        ButtonType buttonTypeKing = new ButtonType("King");
+        ButtonType buttonTypeTwo = new ButtonType("Two");
+        ButtonType buttonTypeAs = new ButtonType("As");
+        ButtonType buttonTypeFour = new ButtonType("Four");
+        ButtonType buttonTypeCancel = new ButtonType("Anuluj", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+        alertt.getButtonTypes().setAll(buttonTypeKing, buttonTypeTwo, buttonTypeAs,buttonTypeFour, buttonTypeCancel);
+
+        Optional<ButtonType> result = alertt.showAndWait();
+        if (result.get() == buttonTypeKing){
+            funkcjaKing();
+        } else if (result.get() == buttonTypeTwo) {
+            funkcjaTwo();
+        } else if (result.get() == buttonTypeAs) {
+            funkcjaAs();
+        } else if (result.get() == buttonTypeFour) {
+            funkcjaFour();
+        } else {
+        }
     }
 
 
@@ -323,7 +428,7 @@ public class StartGame implements Initializable{
         int c = randomek.nextInt(54);
         int d = randomek.nextInt(54);
         int e = randomek.nextInt(54);
-        File Pliczki1 = new File("images/imagesCards/"+cardIds[a]+".png");
+        File Pliczki1 = new File("images/imagesCards/"+cardIds[53]+".png");
         File Pliczki2 = new File("images/imagesCards/"+cardIds[b]+".png");
         File Pliczki3 = new File("images/imagesCards/"+cardIds[c]+".png");
         File Pliczki4 = new File("images/imagesCards/"+cardIds[d]+".png");
@@ -334,11 +439,23 @@ public class StartGame implements Initializable{
         Image imagus3 = new Image(Pliczki3.toURI().toString());
         Image imagus4 = new Image(Pliczki4.toURI().toString());
         Image imagus5 = new Image(Pliczki5.toURI().toString());
+
+        ArrayList<Image> imageski = new ArrayList<>();
+        imageski.add(imagus1);
+        imageski.add(imagus2);
+        imageski.add(imagus3);
+        imageski.add(imagus4);
+        imageski.add(imagus5);
+        //imageski.add(imagus6);
+        //imageski.add(imagus7);
+        //imageski.add(imagus8);
+
+
         //dodatkowe karty
-        File Pliczki11 = new File("images/imagesCards/"+cardIds[a+2]+".png");
-        File Pliczki12 = new File("images/imagesCards/"+cardIds[b+2]+".png");
-        File Pliczki13 = new File("images/imagesCards/"+cardIds[c+2]+".png");
-        File Pliczki14 = new File("images/imagesCards/"+cardIds[d+2]+".png");
+        File Pliczki11 = new File("images/imagesCards/"+cardIds[a]+".png");
+        File Pliczki12 = new File("images/imagesCards/"+cardIds[b]+".png");
+        File Pliczki13 = new File("images/imagesCards/"+cardIds[c]+".png");
+        File Pliczki14 = new File("images/imagesCards/"+cardIds[d]+".png");
 
         Image imagus11 = new Image(Pliczki11.toURI().toString());
         Image imagus12 = new Image(Pliczki12.toURI().toString());
@@ -372,18 +489,25 @@ public class StartGame implements Initializable{
             @Override
             public void handle(ActionEvent event) {
 
-              //  if (cardButtons.get(0) != null) {
-               //     int index = 0;
-              //      String cardId = cardButtons.get(0);
-              //      PopUpp window = new PopUpp(cardId, game, index, cardButtons, startGame, imageBierzacaKarta);
-             //   }
+                //  if (cardButtons.get(0) != null) {
+                //     int index = 0;
+                //      String cardId = cardButtons.get(0);
+                //      PopUpp window = new PopUpp(cardId, game, index, cardButtons, startGame, imageBierzacaKarta);
+                //   }
 
-                   imageBierzacaKarta.setImage(imagus1);
 
-                   if(imageButton1!=imageBierzacaKarta){
-                       imageButton1.setImage(null);
-                   }
+                imageBierzacaKarta.setImage(imagus1);
 
+                if (imagus1 != null) {
+                    //funkcjaAs();
+                    funkcjaJocker();
+                    //DBUtils.changeScene(event, "PickColorFrame.fxml","Wybrana karta", null);
+                }
+
+                // imageBierzacaKarta.setImage(imagus1);
+
+
+            }
 
 
                // DBUtils.changeScene(event, "PopUpp.fxml","Wybrana karta", null);
@@ -393,7 +517,6 @@ public class StartGame implements Initializable{
                    //new PopUpp(cardId, game, index, cardButtons, startGame, imageBierzacaKarta);
                //}
 
-            }
         });
 
      Button2.setOnAction(new EventHandler<ActionEvent>() {
