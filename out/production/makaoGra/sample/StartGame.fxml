@@ -42,35 +42,35 @@
       </AnchorPane>
       <AnchorPane prefHeight="400.0" prefWidth="1920.0" GridPane.rowIndex="2">
          <children>
-            <Button fx:id="Button1" layoutX="20.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#abc" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
+            <Button fx:id="Button1" layoutX="20.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#buttonik1" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
                <graphic>
-                  <ImageView fx:id="imageButton1" fitHeight="180.0" fitWidth="120.0" onMouseClicked="#abc" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imageButton1" fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
                </graphic></Button>
-            <Button fx:id="Button2" layoutX="180.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#abcd" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
+            <Button fx:id="Button2" layoutX="180.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#buttonik2" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
                <graphic>
-                  <ImageView fx:id="imageButton2" fitHeight="180.0" fitWidth="120.0" onMouseClicked="#abcd" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imageButton2" fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
                </graphic></Button>
-            <Button fx:id="Button3" layoutX="340.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#abcde" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
+            <Button fx:id="Button3" layoutX="340.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#buttonik3" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
                <graphic>
                   <ImageView fx:id="imageButton3" fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
                </graphic></Button>
-            <Button fx:id="Button4" layoutX="500.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#abcdef" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
+            <Button fx:id="Button4" layoutX="500.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#buttonik4" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
                <graphic>
                   <ImageView fx:id="imageButton4" fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
                </graphic></Button>
-            <Button fx:id="Button5" layoutX="660.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#abcdefg" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
+            <Button fx:id="Button5" layoutX="660.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#buttonik5" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
                <graphic>
-                  <ImageView fx:id="imageButton5" fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imageButton5" fitHeight="180.0" fitWidth="120.0" onMouseClicked="#buttonik5" pickOnBounds="true" preserveRatio="true" />
                </graphic></Button>
-            <Button fx:id="Button6" layoutX="820.0" layoutY="26.0" mnemonicParsing="false" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
+            <Button fx:id="Button6" layoutX="820.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#buttonik6" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
                <graphic>
                   <ImageView fx:id="imageButton6" fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
                </graphic></Button>
-            <Button fx:id="Button7" layoutX="980.0" layoutY="26.0" mnemonicParsing="false" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
+            <Button fx:id="Button7" layoutX="980.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#buttonik7" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
                <graphic>
                   <ImageView fx:id="imageButton7" fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
                </graphic></Button>
-            <Button fx:id="Button8" layoutX="1140.0" layoutY="26.0" mnemonicParsing="false" prefHeight="200.0" prefWidth="145.0" stylesheets="@../stylunie.css">
+            <Button fx:id="Button8" layoutX="1140.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#buttonik8" prefHeight="200.0" prefWidth="145.0" stylesheets="@../stylunie.css">
                <graphic>
                   <ImageView fx:id="imageButton8" fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
@@ -78,15 +78,15 @@
                   <String fx:value="bevel-grey" />
                   <String fx:value="pikpik" />
                </styleClass></Button>
-            <Button fx:id="Button9" layoutX="1300.0" layoutY="26.0" mnemonicParsing="false" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
+            <Button fx:id="Button9" layoutX="1300.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#buttonik9" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
                <graphic>
                   <ImageView fx:id="imageButton9" fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
                </graphic></Button>
-            <Button fx:id="Button10" layoutX="1460.0" layoutY="26.0" mnemonicParsing="false" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
+            <Button fx:id="Button10" layoutX="1460.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#buttonik10" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
                <graphic>
                   <ImageView fx:id="imageButton10" fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
                </graphic></Button>
-            <Button fx:id="Button11" layoutX="1620.0" layoutY="26.0" mnemonicParsing="false" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
+            <Button fx:id="Button11" layoutX="1620.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#buttonik11" prefHeight="200.0" prefWidth="145.0" styleClass="pikpik" stylesheets="@../stylunie.css">
                <graphic>
                   <ImageView fx:id="imageButton11" fitHeight="180.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
                </graphic></Button>

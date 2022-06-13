@@ -6,12 +6,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -20,12 +18,20 @@ public class Opis implements Initializable{
     @FXML
     private Button powrotDoMenu;
 
+    @FXML
+    ImageView imagePowrot;
+
     public Opis() throws FileNotFoundException {
     }
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        //kod do obrazka na powrot do menu
+        File lockFile = new File("images/LOGO_HCH_wieksze.jpg");
+        Image lockImage = new Image(lockFile.toURI().toString());
+        imagePowrot.setImage(lockImage);
 
         powrotDoMenu.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -36,6 +42,7 @@ public class Opis implements Initializable{
 
 
     }
+
 
     //FileReader fr = new FileReader("C:\\Users\\dawch\\OneDrive\\Pulpit\\makaoGra\\src\\sample\\projekt_zasady_JAVAZASADY.txt");
 
