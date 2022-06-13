@@ -1,0 +1,35 @@
+.pikpik {
+        -fx-background-image: url("CardBack.png");
+        -fx-background-size: 145 200;
+        -fx-effect: dropshadow(one-pass-box, black, 15, 0.1, 0, 0);
+}
+
+.pikpik:hover {
+        -fx-background-radius: 20;
+        -fx-border-color: #bcafaf;
+        -fx-border-radius: 20;
+        -fx-border-width: 3;
+        -fx-border-style: dashed;
+        -fx-padding: 5;
+
+}
+
+
+
+.button-jakis {
+	-fx-background-color: #fff000;
+	-fx-background-repeat: stretch;
+            -fx-background-size: 900 506;
+            -fx-background-position: center center;
+            -fx-effect: dropshadow(three-pass-box, black, 30, 0.1, 0, 0);
+}
+
+#ButtonDobierzKarte {
+    -fx-font: bold italic 20pt "Arial";
+    -fx-background-insets: 0, 0 0 5 0, 0 0 6 0, 0 0 7 0;
+}
+
+#twojeKarty{
+        -fx-font: bold italic 50pt "Arial";
+
+}

@@ -1,0 +1,20 @@
+----------------------------------------------------------------------------------------------------------------------
+			ZASADY
+W grze występują karty funkcyjne, które mają duże znaczenie, kiedy zależy nam na wygranej.
+Karty funkcyjne to asy, dwójki, czwórki, walety, damy, króle, joker.
+Karty niefunkcyjne to zatem trójki, piątki, szóstki, siódemki, ósemki, dziewiątki, dziesiątki.
+
+Joker - karta specjalna, można ją położyć na każdą kartę, następna osoba robi to co pokazała karta przed położeniem Jokera.
+
+dwójka - jeśli te karty zostaną wyrzucone, kolejny gracz powinien dobrać tyle kart,//dobrac 2 karty :)
+jaki numer jest zapisany na karcie (np. dwójka – dwie karty, trójka – trzy) 
+
+czwórka - jeśli zostanie wyrzucona przez gracza, następna osoba czeka jedną kolejkę. Aby móc się obronić przed czwórką należy położyć na nią kolejną czwórkę, wtedy kolejkę traci kolejna osoba.
+
+walet - kiedy wyrzucimy tę kartę, możemy żądać kart innych wartości, najczęściej niefunkcyjnych.
+ 
+dama - tutaj obowiązuje zasada „dama na wszystko, ale nie wszystko na damę” i oznacza możliwość wyłożenia damy na każdą kartę niefunkcyjną.
+
+króle bitne - są to  króle, które powodują dobranie przez innego gracza 5 (kier/pik) lub 3(karo/trefl)dodatkowych kart. Aby się przed nimi obronić, należy położyć innego krola bitewnego, 2 lub 3. 
+
+as - wykładający asa gracz może zażądać zmiany koloru. Zmiana dotyczy tylko następnej osoby, a nie całej kolejki.

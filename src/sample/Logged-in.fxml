@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.LoggedInController">
+   <children>
+      <Label fx:id="label_welcome" layoutX="248.0" layoutY="130.0" text="JESTEŚ ZALOGOWANY">
+         <font>
+            <Font name="Arial" size="27.0" />
+         </font>
+      </Label>
+      <Button fx:id="button_logout" layoutX="248.0" layoutY="388.0" mnemonicParsing="false" style="-fx-background-color: #b9aeae;" text="Wyloguj" textFill="#922222">
+         <font>
+            <Font name="Arial" size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="button_gra" layoutX="355.0" layoutY="388.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="196.0" style="-fx-background-color: #408237;" text="Przejdz do gry" textFill="#36cf22">
+         <font>
+            <Font name="Arial" size="21.0" />
+         </font></Button>
+   </children>
+</AnchorPane>
