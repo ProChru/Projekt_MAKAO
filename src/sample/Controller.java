@@ -4,10 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.net.URL;
@@ -61,9 +63,15 @@ public class Controller implements Initializable {
         button_cancel.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "Menu.fxml","Menu!!!!", null);
-                //Stage stage = (Stage) button_cancel.getScene().getWindow();
-               // stage.close();
+                //DBUtils.changeScene(event, "Menu.fxml","Menu!!!!", null);
+                Alert alertt = new Alert (Alert.AlertType.ERROR);
+                alertt.setTitle("Wyjscie!!!");
+                alertt.setHeaderText("Wychodzisz z gry");
+                alertt.setContentText("EXIT!");
+                alertt.showAndWait();
+                Stage stage = (Stage) button_cancel.getScene().getWindow();
+                stage.close();
+
             }
         });
 

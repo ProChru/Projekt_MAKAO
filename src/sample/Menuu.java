@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -79,8 +80,15 @@ public class Menuu implements Initializable{
             wyjscieMenu.setOnAction(new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent event) {
+                    Alert alertt = new Alert (Alert.AlertType.ERROR);
+                    alertt.setTitle("Wyjscie!!!");
+                    alertt.setHeaderText("Wychodzisz z gry");
+                    alertt.setContentText("EXIT!");
+                    alertt.showAndWait();
+
                     Stage stage = (Stage) wyjscieMenu.getScene().getWindow();
                     stage.close();
+
                 }
             });
 
